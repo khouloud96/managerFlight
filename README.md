@@ -1,8 +1,13 @@
 # managerFlight
- managerFlight is a monolothics application in Java.
-# Technologies : 
- Java 8
- Spring boot
- Netbeans
- Hibernate
- ...
+ENSI (National School of Computer Science) Design & Developpment Project.
+
+It's implemented in java.
+
+## Technologies
+ - Java 8
+ - Spring boot
+ - Hibernate
+ - ...
+## IDE
+ - Netbeans
+
