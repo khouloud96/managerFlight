@@ -5,10 +5,17 @@
  */
 package com.flight.managerFlight.service;
 
+import com.flight.managerFlight.repository.LineRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author DELL
  */
+@Service
 public class LineService {
+    @Autowired
+    private LineRepository lineRepository;
     
 }

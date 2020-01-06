@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -28,6 +31,10 @@ public class Escale {
     
     private String departureTime;
     
+    @OneToOne
     private Airport airport;
+    
+    @ManyToOne
+    private Flight flight;
     
 }

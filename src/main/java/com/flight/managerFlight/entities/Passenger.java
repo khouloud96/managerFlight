@@ -5,9 +5,13 @@
  */
 package com.flight.managerFlight.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -32,5 +36,17 @@ public class Passenger {
     private int age;
     
     private String email;
+    
+    @OneToMany(mappedBy = "passenger", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Booking> booking;
+    
+    public Passenger(String firstName, String lastName, String sexe, int age, String email){
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.sexe = sexe;
+        this.age = age;
+        this.email = email;
+    }
     
 }

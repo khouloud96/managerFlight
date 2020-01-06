@@ -5,6 +5,7 @@
  */
 package com.flight.managerFlight.repository;
 
+import com.flight.managerFlight.entities.Flight;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author DELL
  */
 @Repository
-public interface FlightRepository extends JpaRepository<FlightRepository, Long> {
+public interface FlightRepository extends JpaRepository<Flight, Long> {
     
 }

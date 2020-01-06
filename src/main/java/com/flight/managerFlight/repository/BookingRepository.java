@@ -6,6 +6,7 @@
 package com.flight.managerFlight.repository;
 
 import com.flight.managerFlight.entities.Booking;
+import com.flight.managerFlight.entities.Passenger;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
-    
+    public Booking findByPassenger(Passenger passenger);
 }

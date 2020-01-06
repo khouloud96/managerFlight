@@ -5,12 +5,18 @@
  */
 package com.flight.managerFlight.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -32,10 +38,19 @@ public class Flight {
     
     private Double duration;
     
-    private Airport DepartureLocation;
+    @OneToOne
+    private AirPlane airPlane;
     
-    private Airport ArrivalLocation;
+    @OneToOne(mappedBy = "flight")
+    @JsonIgnore
+    private Line line;
     
+    @OneToMany(mappedBy = "flight", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Escale> escales;
+    
+    @OneToMany(mappedBy = "flight", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Booking> booking;
     
 }

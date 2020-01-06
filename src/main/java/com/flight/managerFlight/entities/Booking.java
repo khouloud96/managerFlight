@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,10 +6,17 @@
  */
 package com.flight.managerFlight.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.math.BigDecimal;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,9 +32,22 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @ManyToOne
     private Passenger passenger;
     
+    @ManyToOne
     private Flight flight;
     
-    private Double TotPrice;
+    private int seats;
+    
+    private Double bags;
+    
+    private BigDecimal TotPrice;
+    
+    public Booking(Long id, Passenger passenger, Flight flight, int seats){
+        this.id = id;
+        this.passenger = passenger;
+        this.flight = flight;
+        this.seats = seats;
+    }
 }

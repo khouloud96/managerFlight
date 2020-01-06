@@ -5,10 +5,16 @@
  */
 package com.flight.managerFlight.service;
 
+import com.flight.managerFlight.repository.AirportRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author DELL
  */
+@Service
 public class AirportService {
-    
+    @Autowired
+    private AirportRepository airportRepository;
 }
