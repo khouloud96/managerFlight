@@ -5,10 +5,44 @@
  */
 package com.flight.managerFlight.controller;
 
+import com.flight.managerFlight.entities.AirPlane;
+import com.flight.managerFlight.service.AirPlaneService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  *
  * @author DELL
  */
+@RestController
+@RequestMapping("/airplanes")
 public class AirPlaneController {
+    @Autowired
+    private AirPlaneService airPlaneService;
     
+    @GetMapping
+    public List<AirPlane> getAirPlanes() {
+        return airPlaneService.getAirPlanes();
+    }
+
+    @GetMapping("/{planeCode}")
+    public AirPlane getAirPlaneByCode(@PathVariable String planeCode) {
+        return airPlaneService.getAirPlaneByCode(planeCode);
+    }
+
+    @PostMapping
+    public AirPlane createAirPlane(AirPlane airPlane) {
+        return airPlaneService.createAirPlane(airPlane);
+    }
+
+    @DeleteMapping("/{planeCode}")
+    public void deleteAirPlane(@PathVariable String planeCode) {
+        airPlaneService.deleteAirPlane(planeCode);
+    }
 }

@@ -41,16 +41,15 @@ public class Flight {
     @OneToOne
     private AirPlane airPlane;
     
-    @OneToOne(mappedBy = "flight")
-    @JsonIgnore
+    @OneToOne
     private Line line;
     
     @OneToMany(mappedBy = "flight", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Escale> escales;
     
-    @OneToMany(mappedBy = "flight", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "flight")
     @JsonIgnore
-    private List<Booking> booking;
+    private Booking booking;
     
 }

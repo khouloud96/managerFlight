@@ -36,7 +36,4 @@ public class Line {
     
     private BigDecimal unitPrice;
     
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Flight flight;
 }
