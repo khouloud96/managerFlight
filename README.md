@@ -1,7 +1,7 @@
 # managerFlight
 ENSI (National School of Computer Science) Design & Developpment Project.
 
-It's implemented in java.
+It's a monolith application that manages the airplaine tickets.
 
 ## Technologies
  - Java 8
