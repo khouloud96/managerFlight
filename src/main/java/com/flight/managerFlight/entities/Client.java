@@ -20,4 +20,14 @@ public class Client extends Passenger {
     private String Username;
     
     private String mdp;
+    
+    public Client(Passenger passenger, String username, String mdp){
+        this.Username = username;
+        this.mdp = mdp;
+        this.setNumPassport(passenger.getNumPassport());
+        this.setAge(passenger.getAge());
+        this.setEmail(passenger.getEmail());
+        this.setFirstName(passenger.getFirstName());
+        this.setLastName(passenger.getLastName());
+    }
 }

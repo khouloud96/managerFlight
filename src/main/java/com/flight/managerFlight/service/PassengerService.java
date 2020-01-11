@@ -26,6 +26,7 @@ public class PassengerService {
     public static PassengerDtO mapToDto(Passenger passenger) {
         if (passenger != null) {
             return new PassengerDtO(
+                    passenger.getNumPassport(),
                     passenger.getFirstName(),
                     passenger.getLastName(),
                     passenger.getSexe(),
@@ -51,6 +52,7 @@ public class PassengerService {
         return mapToDto(
                 passengerRepository.save(
                 new Passenger(
+                        passengerDtO.getNumPassport(),
                         passengerDtO.getFirstName(),
                         passengerDtO.getLastName(),
                         passengerDtO.getSexe(),

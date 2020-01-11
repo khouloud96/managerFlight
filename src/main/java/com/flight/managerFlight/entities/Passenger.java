@@ -41,7 +41,8 @@ public class Passenger {
     @JsonIgnore
     private List<Booking> booking;
     
-    public Passenger(String firstName, String lastName, String sexe, int age, String email){
+    public Passenger(String NumPassport, String firstName, String lastName, String sexe, int age, String email){
+        this.NumPassport = NumPassport;
         this.FirstName = firstName;
         this.LastName = lastName;
         this.sexe = sexe;

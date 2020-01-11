@@ -6,7 +6,9 @@
 package com.flight.managerFlight.service;
 
 import com.flight.managerFlight.entities.Client;
+import com.flight.managerFlight.entities.Passenger;
 import com.flight.managerFlight.repository.ClientRepository;
+import com.flight.managerFlight.repository.PassengerRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,8 @@ import org.springframework.stereotype.Service;
 public class ClientService {
     @Autowired
     private ClientRepository clientRepository;
+    @Autowired
+    private PassengerRepository passengerRepository;
    
     public List<Client> getClients() {
         return this.clientRepository.findAll();
@@ -26,6 +30,11 @@ public class ClientService {
 
     public Client getClientById(String id) {
         return clientRepository.findById(id).get();
+    }
+    
+    public Passenger saveClient(Client client) {
+        Passenger p = passengerRepository.findById(client.getNumPassport()).get();
+        return passengerRepository.save(p);
     }
     
     public void deleteClient(String id) {

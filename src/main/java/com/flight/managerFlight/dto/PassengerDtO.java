@@ -17,6 +17,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class PassengerDtO {
+    private String NumPassport;
+    
     private String FirstName;
     
     private String LastName;
@@ -27,7 +29,8 @@ public class PassengerDtO {
     
     private String email;
     
-    public PassengerDtO(String firstName, String lastName, String sexe, String email, int age){
+    public PassengerDtO(String NumPassport, String firstName, String lastName, String sexe, String email, int age){
+        this.NumPassport = NumPassport;
         this.FirstName = firstName;
         this.LastName = lastName;
         this.sexe = sexe;
