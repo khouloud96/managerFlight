@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DELL
  */
 @RestController
-@RequestMapping("/escale")
+@RequestMapping("/escales")
 public class EscaleController {
     @Autowired
     private EscaleService escaleService;

@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DELL
  */
 @RestController
-@RequestMapping( "/booking")
+@RequestMapping( "/bookings")
 public class BookingController {
     @Autowired
     private BookingService bookingService;
