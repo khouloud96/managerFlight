@@ -10,4 +10,7 @@ It's a monolith application that manages the airplaine tickets.
  - ...
 ## IDE
  - Netbeans
-
+## Team members
+ - Khouloud Ben Salem
+ - Rahma Sayadi
+ - Sabrine Kamoun
